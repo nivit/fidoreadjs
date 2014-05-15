@@ -1,0 +1,94 @@
+<!doctype html>
+<!--
+  $Revision$
+  $Author$
+  $URL$
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FidoReadJS - Draw Lines Test</title>
+    <style>
+      #fidocad-listing {
+        display: none;
+      }
+    </style>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/paper-core.min.js"></script>
+    <script src="js/line-example.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">FidoReadJS</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+      <h3>FidoCad Listing:</h3>
+      <p id="fidocad-listing">
+      [FIDOCAD]
+      LI 40 50 40 25 0
+      LI 40 25 65 25 0
+      LI 65 25 65 50 0
+      LI 65 50 40 50 0
+      LI 40 25 65 50 0
+      LI 80 25 80 35 0
+      LI 80 35 90 35 0
+      LI 90 35 90 45 0
+      LI 90 45 80 45 0
+      LI 80 45 80 55 0
+      LI 80 55 80 55 0
+      </p>
+      <pre>
+   [FIDOCAD]
+   LI 40 50 40 25 0
+   LI 40 25 65 25 0
+   LI 65 25 65 50 0
+   LI 65 50 40 50 0
+   LI 40 25 65 50 0
+   LI 80 25 80 35 0
+   LI 80 35 90 35 0
+   LI 90 35 90 45 0
+   LI 90 45 80 45 0
+   LI 80 45 80 55 0
+   </pre>
+      <h3>Output of FidoReadJS</h3>
+      <figure>
+        <canvas id="fidoreadjs-canvas" width="300" height="250"></canvas>
+        <figcaption>
+          <p>Graphic generated with a series of commands
+          <code>paper.Path.Line({from: [x1, y1], to: [x2, y2], strokeColor: 'black',
+            strokeWidth: 2})
+          </code>
+          of <a target="_blank" href="http://paperjs.org/">Paper .js</a> (v. 0.9.18)
+          </p>
+        </figcaption>
+      </figure>
+      <h3>Output of <a target="_blank" href="http://fidocadj.sourceforge.net/">FidoCadJ</a></h3>
+      <figure>
+        <img src="images/line-example.png" />
+        <figcaption>
+          <p>PNG image generated with the command
+          <code>fidocadj -n -c r3 line-example.png line-example.fcd</code>
+          of FidoCadJ (v. 0.24)</p>
+        </figcaption>
+      </figure>
+    </div>
+  </body>
+</html>
+
