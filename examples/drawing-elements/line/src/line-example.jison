@@ -93,8 +93,7 @@ layer
 
 window.onload = function () {
   var canvas, input, result;
-  canvas = document.getElementById("fidoreadjs-canvas");
-  paper.setup(canvas);
+  paper.setup('fidoreadjs-canvas');
   input = document.getElementById("fidocad-listing").textContent;
   result = lineExample.parse(input);
   paper.view.draw();
