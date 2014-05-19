@@ -1,0 +1,259 @@
+<!doctype html>
+<!--
+$Revision$
+$Author$
+$URL$
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FidoReadJS - Draw Lines with Different Layer - Example</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      #fidocad-listing {
+        display: none;
+      }
+      .row-marketing {
+        margin-top: 50px;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+    <script src="js/line-layer-example.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="http://fidoreadjs.sf.net/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">FidoReadJS</h3>
+      </div>
+
+      <div class="row-marketing">
+        <h4>Test 2</h4>
+        <p>Draw some lines using all 16 layers</p>
+      </div>
+      <div class="row-marketing">
+        <h4>FidoCad Listing:</h4>
+        <p id="fidocad-listing">
+        [FIDOCAD]
+        LI 25 20 25 20 0
+        LI 30 25 30 25 0
+        LI 15 15 15 25 0
+        LI 15 25 20 25 0
+        LI 20 25 20 15 0
+        LI 20 15 15 15 0
+        LI 15 15 15 15 0
+        LI 30 15 30 25 1
+        LI 30 25 30 25 1
+        LI 35 15 40 15 2
+        LI 40 15 40 20 2
+        LI 40 20 35 20 2
+        LI 35 20 35 25 2
+        LI 35 25 40 25 2
+        LI 40 25 40 25 2
+        LI 45 15 50 15 3
+        LI 50 15 50 25 3
+        LI 50 25 45 25 3
+        LI 45 25 45 25 3
+        LI 45 20 50 20 3
+        LI 50 20 50 20 3
+        LI 55 15 55 20 4
+        LI 55 20 60 20 4
+        LI 60 20 60 20 4
+        LI 60 15 60 25 4
+        LI 60 25 60 25 4
+        LI 70 15 65 15 5
+        LI 65 15 65 20 5
+        LI 65 20 70 20 5
+        LI 70 20 70 25 5
+        LI 70 25 65 25 5
+        LI 65 25 65 25 5
+        LI 75 15 75 25 6
+        LI 75 25 80 25 6
+        LI 80 25 80 20 6
+        LI 80 20 75 20 6
+        LI 75 20 75 20 6
+        LI 75 15 80 15 6
+        LI 80 15 80 15 6
+        LI 85 15 90 15 7
+        LI 90 15 90 25 7
+        LI 90 25 90 25 7
+        LI 95 15 100 15 8
+        LI 100 15 100 25 8
+        LI 100 25 95 25 8
+        LI 95 25 95 15 8
+        LI 95 15 95 15 8
+        LI 95 20 100 20 8
+        LI 110 20 105 20 9
+        LI 105 20 105 15 9
+        LI 105 15 110 15 9
+        LI 110 15 110 25 9
+        LI 110 25 110 25 9
+        LI 20 30 20 40 10
+        LI 20 40 20 40 10
+        LI 25 30 25 40 10
+        LI 25 40 30 40 10
+        LI 30 40 30 30 10
+        LI 30 30 25 30 10
+        LI 25 30 25 30 10
+        LI 35 40 35 40 11
+        LI 40 30 40 40 11
+        LI 40 40 40 40 11
+        LI 50 30 50 40 11
+        LI 50 40 50 40 11
+        LI 60 30 60 40 12
+        LI 60 40 60 40 12
+        LI 65 30 70 30 12
+        LI 70 30 70 35 12
+        LI 70 35 65 35 12
+        LI 65 35 65 40 12
+        LI 65 40 70 40 12
+        LI 70 40 70 40 12
+        LI 80 40 80 40 12
+        LI 80 30 80 40 13
+        LI 80 40 80 40 13
+        LI 85 30 90 30 13
+        LI 90 30 90 40 13
+        LI 90 40 85 40 13
+        LI 85 40 85 40 13
+        LI 90 35 85 35 13
+        LI 85 35 85 35 13
+        LI 100 30 100 40 14
+        LI 100 40 100 40 14
+        LI 105 30 105 35 14
+        LI 105 35 110 35 14
+        LI 110 35 110 40 14
+        LI 110 40 110 40 14
+        LI 110 30 110 35 14
+        </p>
+        <pre>
+      [FIDOCAD]
+      LI 25 20 25 20 0
+      LI 30 25 30 25 0
+      LI 15 15 15 25 0
+      LI 15 25 20 25 0
+      LI 20 25 20 15 0
+      LI 20 15 15 15 0
+      LI 15 15 15 15 0
+      LI 30 15 30 25 1
+      LI 30 25 30 25 1
+      LI 35 15 40 15 2
+      LI 40 15 40 20 2
+      LI 40 20 35 20 2
+      LI 35 20 35 25 2
+      LI 35 25 40 25 2
+      LI 40 25 40 25 2
+      LI 45 15 50 15 3
+      LI 50 15 50 25 3
+      LI 50 25 45 25 3
+      LI 45 25 45 25 3
+      LI 45 20 50 20 3
+      LI 50 20 50 20 3
+      LI 55 15 55 20 4
+      LI 55 20 60 20 4
+      LI 60 20 60 20 4
+      LI 60 15 60 25 4
+      LI 60 25 60 25 4
+      LI 70 15 65 15 5
+      LI 65 15 65 20 5
+      LI 65 20 70 20 5
+      LI 70 20 70 25 5
+      LI 70 25 65 25 5
+      LI 65 25 65 25 5
+      LI 75 15 75 25 6
+      LI 75 25 80 25 6
+      LI 80 25 80 20 6
+      LI 80 20 75 20 6
+      LI 75 20 75 20 6
+      LI 75 15 80 15 6
+      LI 80 15 80 15 6
+      LI 85 15 90 15 7
+      LI 90 15 90 25 7
+      LI 90 25 90 25 7
+      LI 95 15 100 15 8
+      LI 100 15 100 25 8
+      LI 100 25 95 25 8
+      LI 95 25 95 15 8
+      LI 95 15 95 15 8
+      LI 95 20 100 20 8
+      LI 110 20 105 20 9
+      LI 105 20 105 15 9
+      LI 105 15 110 15 9
+      LI 110 15 110 25 9
+      LI 110 25 110 25 9
+      LI 20 30 20 40 10
+      LI 20 40 20 40 10
+      LI 25 30 25 40 10
+      LI 25 40 30 40 10
+      LI 30 40 30 30 10
+      LI 30 30 25 30 10
+      LI 25 30 25 30 10
+      LI 35 40 35 40 11
+      LI 40 30 40 40 11
+      LI 40 40 40 40 11
+      LI 50 30 50 40 11
+      LI 50 40 50 40 11
+      LI 60 30 60 40 12
+      LI 60 40 60 40 12
+      LI 65 30 70 30 12
+      LI 70 30 70 35 12
+      LI 70 35 65 35 12
+      LI 65 35 65 40 12
+      LI 65 40 70 40 12
+      LI 70 40 70 40 12
+      LI 80 40 80 40 12
+      LI 80 30 80 40 13
+      LI 80 40 80 40 13
+      LI 85 30 90 30 13
+      LI 90 30 90 40 13
+      LI 90 40 85 40 13
+      LI 85 40 85 40 13
+      LI 90 35 85 35 13
+      LI 85 35 85 35 13
+      LI 100 30 100 40 14
+      LI 100 40 100 40 14
+      LI 105 30 105 35 14
+      LI 105 35 110 35 14
+      LI 110 35 110 40 14
+      LI 110 40 110 40 14
+      LI 110 30 110 35 14
+   </pre>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of FidoReadJS</h4>
+          <p>Graphic generated with a series of commands
+          <code>paper.Path.Line({from: [x1, y1], to: [x2, y2], strokeColor: '#xxxxxx',
+            strokeWidth: 2})
+          </code>
+          of <a target="_blank" href="http://paperjs.org/">Paper .js</a> (v. 0.9.18)
+          </p>
+          <figure>
+            <canvas id="fidoreadjs-canvas" width="350" height="200"></canvas>
+            <figcaption>
+              Output of FidoReadJS
+            </figcaption>
+          </figure>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of <a target="_blank" href="http://fidocadj.sourceforge.net/">FidoCadJ</a></h4>
+          <p>This figure was generated with the command</p>
+          <p>
+          <code>fidocadj -n -c r3 png line-layer-example.png line-layer-example.fcd</code></p>
+          <figure>
+            <img src="images/line-layer-example.png" />
+            <figcaption>
+              Output of FidoCadJ (v. 0.24)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </body>
+  </html>
+
