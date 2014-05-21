@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+$Revision$
+$Author$
+$URL$
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--
+      See http://goo.gl/IXdFGh for a better way to send this through the HTTP headers
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FidoReadJS - Draw Empty Rectangles with Different Layer - Example</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      #fidocad-listing {
+        display: none;
+      }
+      .row-marketing {
+        margin-top: 50px;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+    <script src="js/empty-rectangle-example.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="http://fidoreadjs.sf.net/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">FidoReadJS</h3>
+      </div>
+
+      <div class="row-marketing">
+        <h4>Test 3</h4>
+        <p>Draw some empty rectangles using all 16 layers</p>
+      </div>
+      <div class="row-marketing">
+        <h4>FidoCad Listing:</h4>
+        <p id="fidocad-listing">
+        [FIDOCAD]
+        RV 10 10 175 170 0
+        RV 15 15 170 165 1
+        RV 20 20 165 160 2
+        RV 25 25 160 155 3
+        RV 30 30 155 150 4
+        RV 35 35 150 145 5
+        RV 40 40 145 140 6
+        RV 45 45 140 135 7
+        RV 50 50 135 130 8
+        RV 55 55 130 125 9
+        RV 60 60 125 120 10
+        RV 65 65 120 115 11
+        RV 70 70 115 110 12
+        RV 75 75 110 105 13
+        RV 80 80 105 100 14
+        RV 85 85 100 95 15
+        </p>
+        <pre>
+        [FIDOCAD]
+        RV 10 10 175 170 0
+        RV 15 15 170 165 1
+        RV 20 20 165 160 2
+        RV 25 25 160 155 3
+        RV 30 30 155 150 4
+        RV 35 35 150 145 5
+        RV 40 40 145 140 6
+        RV 45 45 140 135 7
+        RV 50 50 135 130 8
+        RV 55 55 130 125 9
+        RV 60 60 125 120 10
+        RV 65 65 120 115 11
+        RV 70 70 115 110 12
+        RV 75 75 110 105 13
+        RV 80 80 105 100 14
+        RV 85 85 100 95 15
+   </pre>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of FidoReadJS</h4>
+          <p>Graphic generated with a series of commands
+          <code>paper.Path.Rectangle({from: [x1, y1], to: [x2, y2], strokeColor: '#xxxxxx',
+            strokeWidth: 2})
+          </code>
+          of <a target="_blank" href="http://paperjs.org/">Paper .js</a> (v. 0.9.18)
+          </p>
+          <figure>
+            <canvas id="fidoreadjs-canvas" width="550" height="550"></canvas>
+            <figcaption>
+              Output of FidoReadJS
+            </figcaption>
+          </figure>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of <a target="_blank" href="http://fidocadj.sourceforge.net/">FidoCadJ</a></h4>
+          <p>This figure was generated with the command</p>
+          <p>
+          <code>fidocadj -n -c r3 png empty-rectangle-example.png empty-rectangle-example.fcd</code></p>
+          <figure>
+            <img src="images/empty-rectangle-example.png" />
+            <figcaption>
+              Output of FidoCadJ (v. 0.24)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </body>
+  </html>
+
