@@ -96,9 +96,7 @@ layer
 
 empty_rectangle
 	:
-	//RV NUMBER NUMBER NUMBER NUMBER layer { paper.Rectangle(new paper.Point($2, $3), new paper.Size($4, $5)); paper.Path.Rectangle(r); pr.strokeColor = layers[$6].layerColor;
-		RV coords coords layer {paper.Path.Rectangle({from: $2, to: $3, strokeColor: layers[$4].layerColor, strokeWidth: 2}); }
-		}
+	RV coords coords layer {paper.Path.Rectangle({from: $2, to: $3, strokeColor: layers[$4].layerColor, strokeWidth: 2}); }
 	;
 %%
 var layer = function (c, v, d, a) {
