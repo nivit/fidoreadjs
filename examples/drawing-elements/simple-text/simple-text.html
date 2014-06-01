@@ -1,0 +1,87 @@
+<!--
+$Revision$
+$Author$
+$URL$
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--
+    See http://goo.gl/IXdFGh for a better way to send this through the HTTP headers
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FidoReadJS - Draw Empty Rectangles with Different Layer - Example</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      #fidocad-listing {
+        display: none;
+      }
+      .row-marketing {
+        margin-top: 50px;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+    <script src="js/simple-text-example.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="http://fidoreadjs.sf.net/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">FidoReadJS</h3>
+      </div>
+
+      <div class="row-marketing">
+        <h4>Test Simple Text</h4>
+        <p>Draw some text using TE primitive</p>
+      </div>
+      <div class="row-marketing">
+        <h4>FidoCad Listing:</h4>
+        <p id="fidocad-listing">
+        [FIDOCAD]
+        TE 5 10 Vivamus, mea Lesbia, atque amemus
+        TE 5 20 rumoresque senum severiorum
+        TE 5 30 omnes unius aestimemus assis
+        </p>
+        <pre>
+   [FIDOCAD]
+   TE 5 10 Vivamus, mea Lesbia, atque amemus
+   TE 5 20 rumoresque senum severiorum
+   TE 5 30 omnes unius aestimemus assis
+   </pre>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of FidoReadJS</h4>
+          <p>Graphic generated with a series of commands
+          <code>paper.PointText({point: [x1, y1], fillColor: '#nnnnnn', fontSize: 15, content: 'TEXT', fontFamily: 'Courier New'});</code>
+          of <a target="_blank" href="http://paperjs.org/">Paper .js</a> (v. 0.9.18)
+          </p>
+          <figure>
+            <canvas id="fidoreadjs-canvas" width="400" height="110"></canvas>
+            <figcaption>
+              Output of FidoReadJS
+            </figcaption>
+          </figure>
+        </div>
+        <div class="row-marketing">
+          <h4>Output of <a target="_blank" href="http://fidocadj.sourceforge.net/">FidoCadJ</a></h4>
+          <p>This figure was generated with the command</p>
+          <p>
+          <code>fidocadj -n -c r3 png simple-text-example.png simple-text-example.fcd</code></p>
+          <figure>
+            <img src="images/simple-text-example.png" />
+            <figcaption>
+              Output of FidoCadJ (v. 0.24)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </body>
+  </html>
+
