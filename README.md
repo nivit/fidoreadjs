@@ -1,5 +1,4 @@
-
-Description
+# Description
 
   The FidoCadJ format is a way to store technical drawings and electronic
   circuits in a very compact text, easy to embed in an Usenet, forum
