@@ -12,3 +12,5 @@
   Similar projects:
  
     FidoReadPHP: https://sourceforge.net/projects/fidoreadphp/
+
+  (Work in progress)
