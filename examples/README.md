@@ -1,6 +1,6 @@
 If you want to build the examples from scratch you need the following programs:
 
-  * make -- installed by default on the major operating systems
+  * make -- installed by default on major operating systems
   * nodejs: http://node.js -- required by npm
   * npm: http://www.npmjs.org -- required by jison
   * jison http://jison.org -- required to build the parser
@@ -15,7 +15,7 @@ If you want to build the examples from scratch you need the following programs:
   * yuicompressor: http://developer.yahoo.com/yui/compressor/ -- required to
     minimize the parser
 
-  * fidocadj: http://fidocadj.sf.net -- required to build the PNG image
+  * fidocadj: http://fidocadj.sf.net -- required to build PNG images
 
 When you have all those tools, you can build an example with the command:
 
