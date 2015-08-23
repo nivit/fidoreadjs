@@ -7,7 +7,8 @@
 
   More info:
  
-    FidoCadJ: http://fidocadj.sourceforge.net/
+    FidoCadJ: http://darwinne.github.io/FidoCadJ/
+    https://github.com/DarwinNE/FidoCadJ
  
   Similar projects:
  
