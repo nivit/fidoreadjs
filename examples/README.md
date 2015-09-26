@@ -4,7 +4,7 @@ If you want to build the examples from scratch you need the following programs:
   * make -- installed by default on major operating systems
   * nodejs: http://node.js -- required by npm
   * npm: http://www.npmjs.org -- required by jison
-  * jison http://jison.org -- required to build the parser
+  * jison http://zaach.github.io/jison/ -- required to build the parser
 
     Install with the command
     
